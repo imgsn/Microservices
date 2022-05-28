@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Microservices.Web.Models.ProductDto>
+<div class="container p-4 border">
+    <div class="row pb-2">
+        <div class="col">
+            <h1 class="text-primary">Product List</h1>
+        </div>
+        <div class="col text-end pt-1">
+            <a class="btn btn-outline-primary" asp-action="" asp-controller="Product">
+                New
+            </a>
+        </div>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name </th>
+                <th>Category </th>
+                <th>Price </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.ProductName </th>
+                    <th>@item.CategoryName </th>
+                    <th>@item.Price </th>
+                    <th>
+                        <a asp-action="" class="btn btn-success">Edit</a>
+                        <a asp-action="" class="btn btn-danger">Delete</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
